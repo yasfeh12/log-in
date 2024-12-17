@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h2><a href="/">Our Wonderful App</a></h2>
+    </header>
+    <main>
+      <h3>Welcome to the Log In Page</h3>
+      <form action="/register" method="POST">
+        <% if (error && error.length > 0) { %> <% error.forEach(err => { %>
+        <p class="notice"><%= err %></p>
+        <% }) %> <% } %>
+        <fieldset>
+          <legend>Create Account</legend>
+          <label for="username"><small>Username</small></label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            autocomplete="off"
+            required
+          />
+
+          <label for="password"><small>Password</small></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="off"
+            required
+          />
+          <br />
+          <button type="submit">Sign Up</button>
+        </fieldset>
+      </form>
+    </main>
+    <footer>Our App</footer>
+  </body>
+</html>
